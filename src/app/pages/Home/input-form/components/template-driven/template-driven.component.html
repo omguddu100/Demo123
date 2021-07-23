@@ -1,0 +1,72 @@
+<br>
+<h4>Template Driven Form</h4>
+<div class="row">
+<div class="col-md-6">
+  <div class="card">
+    <div class="card-body">
+      <h2>Registration </h2>
+      <form #RegForm="ngForm" (ngSubmit)="onSubmitReg(RegForm.value);">
+        <div class="form-group">
+          <label for="usr">Name:</label>
+          <input type="text" class="form-control" id="usr" name="username" ngModel=''>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Email id:</label>
+          <input type="text" class="form-control"  name="Email" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Company Name:</label>
+          <input type="text" class="form-control"  name="Company_name" ngModel>
+        </div>
+        <div ngModelGroup="address">
+          <div class="form-group">
+            <label for="pwd">Address 1 :</label>
+            <input type="text" class="form-control"  name="Address_1" ngModel>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Address 2 :</label>
+            <input type="text" class="form-control"  name="Address_2" ngModel>
+          </div>
+          <div class="form-group">
+            <label for="pwd">City:</label>
+            <input type="text" class="form-control"  name="city" ngModel>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Pincode:</label>
+            <input type="text" class="form-control"  name="pin_code" ngModel>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <pre>{{RegForm.value  | json}}</pre>
+    </div>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="card">
+    <div class="card-body">
+      <h2>Login</h2>
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value);">
+        <div class=" form-group">
+          <label>Name</label>
+          <input type="text" class="form-control"  name="name" #name="ngModel" ngModel required>
+          <span class="text-danger">
+              Name is required
+          </span>
+      </div>
+        <div class="form-group">
+          <label for="usr">User Name:</label>
+          <input type="text" class="form-control" id="usr" name="username" ngModel=''>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" id="pwd" name="password" ngModel>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <pre>{{loginForm.value  | json}}</pre>
+    </div>
+  </div>
+</div>
+</div>

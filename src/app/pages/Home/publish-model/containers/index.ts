@@ -1,0 +1,1 @@
+export * from './publishmodel-page/publishmodel-page.component'

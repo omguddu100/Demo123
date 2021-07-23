@@ -1,0 +1,1 @@
+export * from '../container/authpage/authpage.component'
