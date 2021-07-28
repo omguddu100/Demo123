@@ -1,21 +1,43 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './components/login/login.component';
-import { SingupComponent } from './components/singup/singup.component';
-import { AuthpageComponent } from './container/authpage/authpage.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+import { AuthPageComponent } from './containers';
 import { AuthRoutingModule } from './auth-routing.module';
+import { YearPipe } from './pipes';
+import { AuthService, EmailService } from './services';
+import { LoginFormComponent, SignFormComponent } from './components';
+import { AuthGuard } from './guards';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
   declarations: [
-    LoginComponent,
-    SingupComponent,
-    AuthpageComponent
+    AuthPageComponent,
+    YearPipe,
+    LoginFormComponent,
+    SignFormComponent
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    MatTabsModule,
+    MatButtonModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    
+  ],
+  providers: [
+    AuthService,
+    EmailService,
+    AuthGuard
   ]
+ 
 })
 export class AuthModule { }
