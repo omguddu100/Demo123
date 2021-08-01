@@ -8,17 +8,17 @@
   <div class="auth-page_sidemenu">
     <div class="left ">
       <ul>
-          <a href="#">
+          <a [routerLink]= "['/']">
               <li class="item-menu">
                   <span class="fa fa-user" aria-hidden="true"></span> 
               </li>
           </a> 
-          <a href="#">
-              <li class="item-menu">
+          <a [routerLink]= "['/']" [routerLinkActive]="['active']">
+              <li class="item-menu" >
                   <span class="fa fa-cog" aria-hidden="true"></span> 
               </li>
           </a>
-          <a href="#">
+          <a  [routerLink]= "['/signup']" [routerLinkActive]="['active']">
               <li class="item-menu">
                   <span class="fa fa-user-plus" aria-hidden="true"></span> 
               </li>
@@ -29,15 +29,16 @@
   <div class="auth-page__logo">
     <div class="auth-page__logo-wrapper">
       <div class="home-section" id="home">
-        <div class="home-content">
-        <img class="auth-page__logo-img" src="https://png.pngtree.com/background/20210712/original/pngtree-dark-blue-digital-future-background-hd-picture-image_1175681.jpg" alt="logo">
+        <div class="home-content" style="height: 100vh;background: blue;">
+        <!-- <img class="auth-page__logo-img" src="https://png.pngtree.com/background/20210712/original/pngtree-dark-blue-digital-future-background-hd-picture-image_1175681.jpg" alt="logo"> -->
         </div>
         </div>
     </div>
   </div>
   <div class="auth-page__content-block">
     <div class="auth-page__content-wrapper">
-       <app-login-form (sendLoginForm)="sendLoginForm()"></app-login-form>
+       <!-- <app-login-form (sendLoginForm)="sendLoginForm()"></app-login-form> -->
+       <router-outlet></router-outlet>
       <!-- <app-sign-form (sendSignForm)="sendSignForm()"></app-sign-form> -->
       <!-- <p class="auth-page__footer-title">© 2014-{{todayDate | year}} <a href="asdsd.com">sdsds sdsd</a>, LLC. All rights reserved.</p> -->
     </div>

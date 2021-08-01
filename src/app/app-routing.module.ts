@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {AuthGuard} from './pages/auth/guards';
 
 
 const routes: Routes = [
-  // {
-  //   path: "dashboard",
-  //   component:DashboardComponent
-    
-  // },
   
   {
     path: "dashboard",
     pathMatch:'full',
+    //canActivate: [AuthGuard],
     loadChildren:()=> import('./pages/Home/dashboard/dashboard.module').then(m=>m.DashboardModule)
   },
   {
@@ -22,8 +19,8 @@ const routes: Routes = [
   },
 
   {
-    path: "",
-    pathMatch:'full',
+    path:"",
+  //  pathMatch:'full',
     loadChildren:()=> import('./pages/auth/auth.module').then(m=>m.AuthModule)
   },
   {

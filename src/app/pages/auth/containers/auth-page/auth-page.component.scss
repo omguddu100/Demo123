@@ -130,6 +130,7 @@
 
   &__logo-img {
     margin-bottom: 50px;
+    width: 100%;
   }
 
   &__logo-title {
@@ -169,6 +170,8 @@
   padding: 0;
   list-style-type: none;
   text-align: left;
+  transform: translate(0px, 58px);
+  height: 100%;
 }
 .left li {
   width: auto;
@@ -186,11 +189,11 @@
 }
 
 .left .item-menu {
-  height: 100%;
+  height: 31%;
   overflow: hidden;
   color: #000000;
-  font-size: 3em;
-  padding-top: 100%;
+  font-size: 3.3em;
+  padding: 80px 5px 8px 16px;
 }
 .left a {
   color: #000000;

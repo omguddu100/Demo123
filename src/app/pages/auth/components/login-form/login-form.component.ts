@@ -46,6 +46,7 @@ export class LoginFormComponent implements OnInit {
         this.toaster.open({text: val.res,caption:'Authentication Failed',type: 'danger'});
       }
     });
+    
   }
 
 }

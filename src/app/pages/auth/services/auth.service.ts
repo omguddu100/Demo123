@@ -18,7 +18,8 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {
     this.currentUserSubject = new BehaviorSubject<Loginig>(
-      JSON.parse(localStorage.getItem('token') || '{}')
+      //JSON.parse(localStorage.getItem('token') || '')
+      {token:'token'}
     );
     this.currentUser = this.currentUserSubject.asObservable();
   }
@@ -42,9 +43,6 @@ export class AuthService {
       );
   }
 
-  // public login(): void {
-  //   localStorage.setItem('token', 'token');
-  // }
 
   public sign(): void {
     localStorage.setItem('token', 'token');

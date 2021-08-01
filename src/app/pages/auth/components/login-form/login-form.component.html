@@ -16,11 +16,11 @@
 
 <div class="login-form">
   <h6>Don't have an account? <a href="#"> Sign up</a></h6>
-  <form>
+  <form [formGroup]="form" (ngSubmit)="login()">
     <div class="username_box mt-4">
       <label>User Name</label>
      <div class="input-group">
-        <input type="email" class="form-control" placeholder="User Name">
+        <input type="email" class="form-control" placeholder="User Name" formControlName="email">
         <div class="input-group-append">
           <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
         </div>
@@ -29,7 +29,7 @@
      <div class="pass_box mt-3">
       <label>Password</label>
       <div class="input-group">
-         <input type="password" class="form-control" placeholder="Your Email" id="mail" name="email">
+         <input type="password" class="form-control" placeholder="password" formControlName="password" name="email">
          <div class="input-group-append">
            <span class="input-group-text"><i class="fa fa-cog" aria-hidden="true"></i></span>
          </div>
