@@ -18,8 +18,8 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {
     this.currentUserSubject = new BehaviorSubject<Loginig>(
-      //JSON.parse(localStorage.getItem('token') || '')
-      {token:'token'}
+      JSON.parse(localStorage.getItem('token') || '{}')
+     // {token:'token'}
     );
     this.currentUser = this.currentUserSubject.asObservable();
   }
@@ -34,8 +34,8 @@ export class AuthService {
       .pipe(
         map((Loginig) => {
           // login successful if there's a jwt token in the response
-          if (Loginig && Loginig.token) {
-            localStorage.setItem('token', JSON.stringify(Loginig));
+          if (Loginig && Loginig[0].token) {
+            localStorage.setItem('token', JSON.stringify(Loginig[0].token));
             this.currentUserSubject.next(Loginig);
           }
           return Loginig;

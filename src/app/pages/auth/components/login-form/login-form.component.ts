@@ -25,21 +25,22 @@ export class LoginFormComponent implements OnInit {
     }
   }
   public form:any
-  public flatlogicEmail = 'shanthi@abc.com';
-  public flatlogicPassword = '12admin@12';
+  public username = 'sandeep';
+  public password = 'cts1234';
+ 
 
 
   public ngOnInit(): void {
     this.form = new FormGroup({
-      email: new FormControl(this.flatlogicEmail, [Validators.required, Validators.email]),
-      password: new FormControl(this.flatlogicPassword, [Validators.required])
+      username: new FormControl(this.username, [Validators.required, Validators.email]),
+      password: new FormControl(this.password, [Validators.required])
     });
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
   }
 
    login() {
     this.AuthService.user_login(this.form.value).subscribe(val => {
-      if(val.success){
+      if(val[0].status){
        this.toaster.open({text: 'login successfully',caption:'Authentication Success',type: 'success'});
         this.router.navigate([this.returnUrl]);
       }else{

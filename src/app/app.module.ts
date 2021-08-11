@@ -8,6 +8,7 @@ import { ToastNotificationsModule } from 'ngx-toast-notifications';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthGuard } from './pages/auth/guards';
 import { SharedModule } from './shared/shared.module';
 
 
@@ -25,7 +26,9 @@ import { SharedModule } from './shared/shared.module';
     
    
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
